@@ -1,0 +1,29 @@
+<nav class="navbar navbar-bright navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" routerLink="/">HOME</a>
+    <!-- <button class="navbar-toggler"  type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button> -->
+  
+    <!-- <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0"> -->
+        <li class="nav-item" style="list-style-type: none;">
+          <a class="nav-link" routerLink="/blogs" >BLOGS CATEGORIES</a>
+      </li>
+        <li class="nav-item" style="list-style-type: none;">
+            <a class="nav-link" routerLink="/login" *ngIf = "!_auth.loggedIn() && !_auth.adminloggedIn()">LOGIN</a>
+          </li>
+        <li class="nav-item" style="list-style-type: none;">
+            <a class="nav-link" routerLink="/signup" *ngIf = "!_auth.loggedIn() && !_auth.adminloggedIn()">SIGN UP</a>
+        </li>
+        <li class="nav-item" style="list-style-type: none;">
+          <a class="nav-link" routerLink="/myposts" *ngIf = _auth.loggedIn()>MY POSTS</a>
+        </li>
+        <li class="nav-item" style="list-style-type: none;">
+          <a class="nav-link" (click)="logoutUser()" *ngIf = _auth.loggedIn() style="cursor: pointer;">LOGOUT</a>
+        </li>
+        <li class="nav-item" style="list-style-type: none;">
+          <a class="nav-link" (click)="adminlogout()" *ngIf = _auth.adminloggedIn() style="cursor: pointer;">ADMIN LOGOUT</a>
+        </li>
+      <!-- </ul>
+    </div> -->
+  </nav>

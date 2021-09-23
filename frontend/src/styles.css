@@ -1,0 +1,200 @@
+
+  @import "~bootstrap/dist/css/bootstrap.min.css";
+  @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Playfair+Display&family=Roboto:wght@700&display=swap');  
+  *{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Poiret One', cursive;
+}
+body,html{
+    scroll-behavior: smooth;
+    background-color: #FFFFFF;
+}
+.bloglist{
+    margin: 0% 10% 0% 10%;
+    box-shadow: 0 4px 8px 0 rgba(103,14,40,0.2), 0 6px 20px 0 rgba(103,14,40,0.19);
+    text-align: center;
+    border-radius: 5px;
+    height: 200px;
+  }
+
+  .bloglist:hover {
+    -ms-transform: scale(1); /* IE 9 */
+    -webkit-transform: scale(1); /* Safari 3-8 */
+    transform: scale(1); 
+  }
+  a{
+      text-decoration: none;
+      color: black;
+  }
+
+.top-spacer{
+    height: 200px;
+  }
+  .top-spacer-form{
+height: 100px;
+  }
+  .image2{
+    float: left;
+    /* display: block; */
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    height:100%;
+  } 
+  .mainc{
+    box-shadow: 0 4px 8px 0 rgba(103,14,40,0.2), 0 6px 20px 0 rgba(103,14,40,0.19);
+    margin:0% 10% 0% 10% ;
+  }
+  .mainc p{
+    text-align: center;
+    margin: 2%;
+  }
+  .content{
+    font-size: 24px;
+    font-family: 'Merriweather', serif;
+  }
+  .title{
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+  }
+  a:hover{
+    color: black;
+
+  }
+  .iconDetails {
+    /* margin-left:2%; */
+     float:left; 
+     height:150px;
+     width:200px;	
+     } 
+     .container2 {
+      width:80%;
+      height:140px;
+      padding:1%;
+    }
+
+    div .tarea {
+      margin: auto;
+      width: 60%;
+      padding: 10px;
+      text-align: center;
+  }
+
+/* CSS */
+.button-52 {
+  font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-52:after {
+  content: "";
+  /* background-color: #88846c; */
+  background-color: #E491DC;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.button-52:hover:after {
+  top: 0px;
+  left: 0px;
+}
+
+@media (min-width: 768px) {
+  .button-52 {
+    padding: 13px 50px 13px;
+  }
+}
+.btitle{
+font-family: 'Roboto', sans-serif;
+}
+
+
+
+/* CSS */
+.button-34 {
+  background: #3F3D56;
+  border-radius: 999px;
+  box-shadow: #3F3D56 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 10px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 8px 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+}
+
+/* CSS */
+.button-59 {
+  align-items: center;
+  background-color: #fff;
+  border: 2px solid #000;
+  box-sizing: border-box;
+  color: #000;
+  cursor: pointer;
+  display: inline-flex;
+  fill: #000;
+  font-family: Inter,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  height: 35px;
+  justify-content: center;
+  letter-spacing: -.8px;
+  line-height: 24px;
+  min-width: 40px;
+  outline: 0;
+  padding: 0 17px;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-59:focus {
+  color: #3F3D56;
+}
+
+.button-59:hover {
+  border-color: #3F3D56;
+  color: #3F3D56;
+  fill: #3F3D56;
+}
+
+.button-59:active {
+  border-color: #3F3D56;
+  color: #3F3D56;
+  fill: #3F3D56;
+}
+
+@media (min-width: 768px) {
+  .button-59 {
+    min-width: 170px;
+  }
+}
