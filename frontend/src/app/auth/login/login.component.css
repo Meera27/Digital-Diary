@@ -1,0 +1,108 @@
+*{
+    font-weight:600;
+  }
+  form{
+    background-image: url("/assets/images/back1.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .register{
+      padding: 3%;
+      border-width: 1px;
+      /* box-shadow: 10px 10px 10px rgb(24, 20, 31); */
+      background-position: left;
+      height: auto; 
+      margin-top: 4%;
+      border: 1px solid white;
+      padding: 25px;
+      background-color: rgba(250, 241, 241, 0.486);
+      color: black;
+  } 
+  input{
+      text-indent:14px;
+  }
+  .form-control:hover{
+      border: 1px solid #512e58;
+      background-color: rgba(233, 206, 250, 0.966);
+      color: black;
+  }
+  .register .register-form{
+      padding: 8%;
+      margin-top: 10%;
+  }
+  .btnlogin{
+      border: none;
+      border-radius: 1.5rem;
+      margin-left: 50px;
+      padding: 2%;
+      background: #7a46aa;
+      color: rgb(242, 243, 234);
+      font-size: 20px;
+      width: 90%;
+      cursor: pointer;
+  }
+  .btnlogin:hover{
+      background:  #5f3388fa;
+  }
+  .register-heading{
+      text-align: center;
+      margin-top: 6%;
+      margin-bottom: -15%;
+      color: black;
+      font-size: 50px;
+      
+  }
+  .register{
+      width: 50%;
+      
+      }
+      @media only screen and (max-width: 900px) {
+        .register {
+          width: 90%;
+        }
+      }
+      form i.fa {
+        position:absolute ;
+        top: 10px;
+        left: 20px;
+        color: rgb(147, 118, 163);
+        /* color: rgba(250, 249, 245, 0.596); */
+        font-size: 17px;
+        /* z-index: 9999; */
+        }
+      .eye{
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        color: rgb(82, 80, 80);
+        transform: translateY(-50%);
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        display: none;
+        user-select: none;
+      }
+      .form-control{
+          border: 1px solid #734688;
+          background-color: rgba(255, 255, 255, 0.788); 
+          color: rgb(14, 12, 12);
+      }
+      .input{
+          height: 40px;
+      }
+      .error{
+          color: #d33737;
+          font-size: 13px;
+          font-weight: 600;
+      }
+      .alert{
+        background-color: rgba(216, 180, 180, 0.705);
+        color: rgb(128, 38, 38);
+        text-align: center;
+      }
+      .alert-danger{
+        margin-top: 30px;
+      }
+  .btnlogin[disabled]{
+    background: rgb(172, 168, 184);
+  }

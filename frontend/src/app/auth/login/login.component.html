@@ -1,0 +1,37 @@
+<form #userlogin ="ngForm" (ngSubmit)="loginUser(userlogin)">
+    <div class="container register" >
+      <div class="alert alert-danger" *ngIf="failedlogin">
+        <strong>{{message}}</strong>
+      </div>
+            <div class=" register-right">
+                      <h3 class="register-heading">Login</h3><br>
+                      <div class="row register-form">
+                              <div class="col-md-10">
+                                  <div class="form-group">
+                                      <i class="fa fa-user-circle-o fa-form" ></i>
+                                      <input type="email" name="email" [(ngModel)]= "user.email"
+                                      #emails="ngModel" [class.is-invalid]="emails.invalid && emails.touched" pattern="^([A-Za-z0-9\.-]+)@([A-Za-z0-9\-]+).([a-z]{2,3})(.[a-z]{2,3}?)$" class="form-control input" placeholder="Your Email *" title="Can be of the form abc@xyz.(com)(.co)" value="" aria-describedby="emailHelp" required>
+                                      <small class="text-danger" [class.d-none] = "emails.valid||emails.touched||emails.pristine">Enter valid email</small>
+                                  </div>
+                              </div>
+                              <div class="col-md-10">
+                              <div class="form-group">
+                                  <i class="fa fa-key fa-form" ></i>
+                                  <input type="password" id="pwd" name="paswd" [(ngModel)]= "user.paswd" 
+                                  #paswd="ngModel" [class.is-invalid]="paswd.invalid && paswd.touched" minlength="8" class="form-control input" placeholder="Password *" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+                                  <small class="text-danger" [class.d-none] = "paswd.valid||paswd.touched||paswd.pristine">Must contain 8 characters</small> 
+                                </div>
+                              </div><br><br><br><br><br><br>
+                              <!-- <div class="custom-control custom-checkbox ">
+                                <input type="checkbox" class="custom-control-input" id="customCheck1" style="margin-left: 100px;">
+                                <label class="custom-control-label" for="customCheck1" style="margin-left: 10px;color:wheat;">Remember password</label>
+                              </div> -->
+                      </div>
+                      <button type="submit" [disabled]="userlogin.invalid" class="btnlogin" >Sign In</button><br>
+                          
+                      <h5></h5>
+                     <p style="color:black;text-align: center;">Don't have an account?<a routerLink="/signup" style="color:  rgb(70, 50, 102)">Click here to register!</a></p>
+                          <br>
+               </div>
+        </div>
+</form>

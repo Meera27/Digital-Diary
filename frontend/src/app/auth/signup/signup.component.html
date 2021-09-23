@@ -1,0 +1,81 @@
+<form #usersignup ="ngForm" (ngSubmit)="AddUser()" >
+  <div class="container register" >
+
+      <div class="alert alert-danger" *ngIf="failedsignup">
+        <strong>{{message}}</strong>
+      </div>
+
+      <div class="register-right">
+        <h3 class="register-heading">Sign Up</h3><br>
+        <div class="row register-form">
+          <div class="col-md-6"> 
+            <div class="form-group">
+                <i class="fa fa-user" ></i>
+                    <input type="text" name="fname" id="fname"  [(ngModel)]= "userItem.fname"
+                    #fname="ngModel" [class.is-invalid]="fname.invalid && fname.touched" pattern="^[A-Za-z\. ]+$" class="form-control input"  placeholder="First Name *"  title="Can only contain alpahets " required>
+                    <small class="text-danger" [class.d-none] = "fname.valid||fname.touched||fname.pristine">Enter valid name</small>
+            </div>
+          </div><br><br>
+          <div class="col-md-6">
+            <div class="form-group">
+                <i class="fa fa-user" ></i>
+                <input type="text" name="lname" id="lname"  [(ngModel)]= "userItem.lname"
+                #lname="ngModel"  [class.is-invalid]="lname.invalid && lname.touched" pattern="^[A-Za-z\. ]+$" class="form-control input" placeholder="Last Name *"  title="Can only contain alpahets " required>
+                <small class="text-danger" [class.d-none] = "lname.valid||lname.touched||lname.pristine">Enter valid name</small>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+                <i class="fa fa-envelope" ></i>
+                <input type="text" name="email" id="email"  [(ngModel)]= "userItem.email" 
+                 #emails="ngModel" [class.is-invalid]="emails.invalid && emails.touched" pattern="^([A-Za-z0-9\.-]+)@([A-Za-z0-9\-]+).([a-z]{2,3})(.[a-z]{2,3}?)$" class="form-control input" placeholder="Your Email *" title="Can be of the form abc@xyz.(com)(.co)" value="" aria-describedby="emailHelp" required>
+                <small class="text-danger" [class.d-none] = "emails.valid||emails.touched||emails.pristine">Enter valid email</small>
+            </div>
+          </div><br><br>
+          <div class="col-md-12">
+            <div class="form-group">
+                <i class="fa fa-phone" ></i>
+                <input type="text" name="phno" id="phno"  [(ngModel)]= "userItem.phno"
+                #phno="ngModel" [class.is-invalid]="phno.invalid && phno.touched" pattern="^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$" class="form-control input" placeholder="Your Phone *" title="Must be of pattern XXX-XXX-XXXX or XXX.XXX.XXXX or XXX XXX XXX or XXXXXXXXXX" value="" required>
+                <small class="text-danger" [class.d-none] = "phno.valid||phno.touched||phno.pristine">Enter valid phone number</small>
+            </div>
+          </div><br><br>
+          <div class="col-md-12">
+            <div class="form-group">
+                <i class="fa fa-user-circle-o" ></i>
+                <input type="text" name="username" class="form-control input"  [(ngModel)]= "userItem.username"
+                #userna="ngModel" [class.is-invalid]="userna.invalid && userna.touched" placeholder="Username *" value="" required>
+                <small class="text-danger" [class.d-none] = "userna.valid||userna.touched||userna.pristine">Username is required</small>
+            </div>
+        </div><br><br>
+        <div class="col-md-6">
+          <div class="form-group">
+              <i class="fa fa-key" ></i>
+              <input type="password" name="paswd" id="pwd"  [(ngModel)]= "userItem.paswd"
+              #paswd="ngModel" [class.is-invalid]="paswd.invalid && paswd.touched" minlength="8" class="form-control input" placeholder="Password *" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+                <small class="text-danger" [class.d-none] = "paswd.valid||paswd.touched||paswd.pristine">Password must be strong<p style="font-size: 13px;">(Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters)</p></small>
+              <br>
+           </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+                <i class="fa fa-key" ></i>
+                <input type="password" id="confpwd" (keyup)="check()" [(ngModel)]="confpaswd" name="confpaswd" class="form-control input"  placeholder="Confirm Password *" value="" required>
+                <small class="text-danger">{{paswdval}}</small>
+            </div>
+          </div>
+          <input type="submit" [disabled]="usersignup.form.invalid"  class="btnsignup" value="Register" >
+          <br><br>
+            
+          </div>
+          <p class="mb-3" style="color:black;text-align: center;">Already have an account?<a routerLink="/login" style="color:  rgb(70, 50, 102);">Click here to login!</a></p>
+          
+           <!-- <div class="mb-3 form-check" style="margin-left: 50px;">
+             <input type="checkbox" class="custom-control-input" id="customCheck1">
+             <label class="custom-control-label" for="customCheck1" style="margin-left: 10px;color:rgb(37, 36, 34);">I accept the Terms of Use and Privacy Policies.</label>
+          </div> 
+          <br> -->
+      </div>
+    </div>
+
+</form>
