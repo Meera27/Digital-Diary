@@ -26,5 +26,10 @@ export class HeaderComponent implements OnInit {
     localStorage.removeItem('admintoken');
     this._router.navigate(['/'])
   }
-
+  blogcatclicked(){
+    localStorage.setItem("blogcatclicked","true");
+  }
+  delblogcatclicked(){
+    localStorage.removeItem("blogcatclicked")
+  }
 }

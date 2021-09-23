@@ -27,7 +27,7 @@
            <button class="btn btn-danger mx-2" type="submit">Submit review</button>
          </div>
        </form>  
-         <div *ngIf="_auth.loggedIn()">
+         <div *ngIf="_auth.loggedIn() && !blogCatClicked()">
            <textarea  class="my-3" readonly *ngIf="isClicked" name="text" id="" cols="40" rows="4">{{post.review}}</textarea><br>
           <button class="btn btn-danger mx-5"(click)="OnClick()">{{buttonName}} review</button>
         </div>        

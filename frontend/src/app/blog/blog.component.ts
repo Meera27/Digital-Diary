@@ -43,4 +43,7 @@ export class BlogComponent implements OnInit {
     alert("success");
     this._router.navigate(['/blogs']); 
   }
+  blogCatClicked(){
+    return !!localStorage.getItem("blogcatclicked");
+  }
 }
