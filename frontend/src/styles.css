@@ -1,10 +1,14 @@
 
   @import "~bootstrap/dist/css/bootstrap.min.css";
-  @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Playfair+Display&family=Roboto:wght@700&display=swap');  
+  @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Playfair+Display&family=Exo+2:wght@300&family=Roboto:wght@700&display=swap');  
+
   *{
     margin: 0px;
     padding: 0px;
-    font-family: 'Poiret One', cursive;
+    /* font-family: 'Poiret One', cursive; */
+}
+form{
+  font-family: 'Exo 2', sans-serif;
 }
 body,html{
     scroll-behavior: smooth;
@@ -16,12 +20,15 @@ body,html{
     text-align: center;
     border-radius: 5px;
     height: 200px;
+  transition: transform .2s; /* Animation */
+
   }
 
   .bloglist:hover {
-    -ms-transform: scale(1); /* IE 9 */
-    -webkit-transform: scale(1); /* Safari 3-8 */
-    transform: scale(1); 
+    /* -ms-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1);  */
+    transform: scale(1.05);
   }
   a{
       text-decoration: none;
@@ -31,7 +38,7 @@ body,html{
 .top-spacer{
     height: 200px;
   }
-  .top-spacer-form{
+.top-spacer-form{
 height: 100px;
   }
   .image2{
@@ -82,42 +89,40 @@ height: 100px;
   }
 
 /* CSS */
-.button-52 {
-  font-size: 16px;
-  font-weight: 200;
-  letter-spacing: 1px;
-  padding: 13px 20px 13px;
-  outline: 0;
-  border: 1px solid black;
+
+/* CSS */
+.button-81 {
+  background-color: #fff;
+  border: 0 solid #e2e8f0;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: #0d172a;
   cursor: pointer;
-  position: relative;
-  background-color: rgba(0, 0, 0, 0);
+  display: inline-block;
+  font-family: "Basier circle",-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 1rem 1.6rem;
+  text-align: center;
+  text-decoration: none #0d172a solid;
+  text-decoration-thickness: auto;
+  transition: all .1s cubic-bezier(.4, 0, .2, 1);
+  box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
 }
 
-.button-52:after {
-  content: "";
-  /* background-color: #88846c; */
-  background-color: #E491DC;
-  width: 100%;
-  z-index: -1;
-  position: absolute;
-  height: 100%;
-  top: 7px;
-  left: 7px;
-  transition: 0.2s;
-}
-
-.button-52:hover:after {
-  top: 0px;
-  left: 0px;
+.button-81:hover {
+  background-color: #1e293b;
+  color: #fff;
 }
 
 @media (min-width: 768px) {
-  .button-52 {
-    padding: 13px 50px 13px;
+  .button-81 {
+    font-size: 1.125rem;
+    padding: 1rem 2rem;
   }
 }
 .btitle{

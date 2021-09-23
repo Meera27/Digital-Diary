@@ -1,15 +1,28 @@
 <div class="row top-spacer-form">
-    <div class="col-lg-12 col-md-12 col-sm-12"></div>
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <H1 style="text-align: center;margin-top: 25px;">CREATE BLOG</H1>
+    </div>
 </div>
 <div class="mainc" style="margin-bottom: 300px;">
-    <form #addpost="ngForm" (ngSubmit)="AddPost()" style="margin: 0px 300px 0px 300px;">
+    <!-- <form #addpost="ngForm" (ngSubmit)="AddPost()" style="margin: 0px 200px 0px 200px;"> -->
+      <form #addpost="ngForm" (ngSubmit)="AddPost()" class="mx-5">
+  
+      <br><br>
+        <textarea cols="40" name="title" [(ngModel)]="postItem.title" class="form-control" placeholder="Enter a suitable title for your blog : " required></textarea>
         <br><br>
-        <input cols="40" name="title" [(ngModel)]="postItem.title" class="form-control" placeholder="Enter a suitable title : "/>
-        <br><br>
-        <select class="form-control" [(ngModel)]="postItem.category">
-            <option disabled>Select Category</option>
-            <option (change)="selectChangeHandler($event)" *ngFor="let cat of category">{{cat}}</option>
-        </select>
+
+
+        <div class="row">
+          <div class="col-lg-3 col-md-3 col-sm-3">
+<label style="font-size: 16px;"for="Category">Select Category</label>
+          </div>
+          <div class="col-lg-9 col-md-9 col-sm-9">
+            <select class="form-control" [(ngModel)]="postItem.category">
+              <option disabled>Select Category</option>
+              <option (change)="selectChangeHandler($event)" *ngFor="let cat of category">{{cat}}</option>
+          </select>
+          </div>
+        </div>
         <br><br>
         <!-- <input cols="40" name="image" [(ngModel)]="postItem.image" class="form-control"  placeholder="Link  "/> -->
         <div class="input-group">
@@ -18,13 +31,13 @@
             </div>
             <div class="custom-file">
               <input type="file" class="custom-file-input" id="inputGroupFile01"
-                aria-describedby="inputGroupFileAddon01">
+                aria-describedby="inputGroupFileAddon01" required>
               <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
             </div>
           </div>
         <br><br>
         <label for="content">Enter your blog content below :</label>
-        <textarea name="text" id="tarea" cols="30" rows="10" [(ngModel)]="postItem.content" class="form-control"></textarea><br><br>
+        <textarea name="text" id="tarea" cols="30" rows="10" [(ngModel)]="postItem.content" class="form-control" required></textarea><br><br>
         <div class="text-center">
         <button type="submit" class="btn btn-dark text-center" style="margin-bottom: 20px;">SUBMIT</button>
     </div>

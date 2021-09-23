@@ -11,7 +11,7 @@ import { PostModel } from '../post.model';
 export class AddnewpostComponent implements OnInit {
 
   postItem = new PostModel("","","","","","");
-  category:any=['Sports','Technology'];
+  category:any=['Category','Sports','Technology'];
   selectedDay: any;
   constructor(private postService : PostService, private _router : Router) { }
   
@@ -31,6 +31,5 @@ export class AddnewpostComponent implements OnInit {
   }
   changeWebsite(e:any) {
     console.log(e.target.value);
-
   }
 }

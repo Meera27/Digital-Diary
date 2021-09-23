@@ -16,13 +16,14 @@
             <div class="col-lg-4 col-md-4 col-sm-4">
                 <img src="../assets/blog.png" class='iconDetails' alt="">
             </div>
-            <div class="col-lg-8 col-md-8 col-sm-8" style="margin-left: 150px;">
+            <div class="col-lg-8 col-md-8 col-sm-8" style="margin-left: 200px;">
                 <p class="btitle">{{post.title}}</p>
                 <button style="align-self: center;" class="button-34" role="button">{{post.category}}</button>
                 <!-- <b>Category:-</b> -->
+                <p class="content" style="font-size: 12px;">{{post.content}}</p>
                 <br><br>
-                <div class="buttons" *ngIf="_auth.adminloggedIn()" style="margin-right: 5%;">
-                    <button class="button-52" id="update" style="align-self: center;" (click)="Addreview(post)"
+                <div class="buttons" *ngIf="_auth.adminloggedIn()" style="margin-right:5%;">
+                    <button class="button-81" id="update" style="align-self: center;" (click)="Addreview(post)"
                         style="align-items: center;" role="button">Review</button>
                 </div>
             </div>
