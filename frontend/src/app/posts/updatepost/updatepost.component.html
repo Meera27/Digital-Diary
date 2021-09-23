@@ -3,14 +3,28 @@
     <div class="col-lg-12 col-md-12 col-sm-12"></div>
 </div>
 <div class="mainc">
-<form #updatepost ="ngForm" (ngSubmit)="UpdatePost()">
+<form #updatepost ="ngForm" (ngSubmit)="UpdatePost()" style="margin: 0px 300px 0px 300px;">
     <br><br>
-    <label>title</label>
-    <textarea cols="40" name="title" [(ngModel)]= "postItem.title"></textarea>
+    <input cols="40" name="title" [(ngModel)]="postItem.title" class="form-control" placeholder="Enter a suitable title : "/>
     <br><br>
-    <label>category</label>
-    <input type="text" name="category" [(ngModel)]= "postItem.category">
+    <select class="form-control" [(ngModel)]="postItem.category">
+        <option disabled>Select Category</option>
+        <option (change)="selectChangeHandler($event)" *ngFor="let cat of category">{{cat}}</option>
+    </select>
     <br><br>
-    <input type="submit" [disabled]="updatepost.invalid" style="margin-left: 80px;" class="btnnewbook" value="Save">
-</form> 
+    <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+        </div>
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" id="inputGroupFile01"
+            aria-describedby="inputGroupFileAddon01">
+          <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+        </div>
+      </div>
+      <br><br>
+      <textarea name="text" id="tarea" cols="30" rows="10" [(ngModel)]="postItem.content" class="form-control"></textarea><br><br>
+      <div class="text-center">
+      <button type="submit" class="btn btn-dark text-center">SUBMIT</button>
+  </div></form> 
 </div>
