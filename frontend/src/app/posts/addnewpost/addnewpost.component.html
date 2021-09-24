@@ -8,7 +8,15 @@
       <form #addpost="ngForm" (ngSubmit)="AddPost()" class="mx-5">
   
       <br><br>
+      <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-3">
+<label for="Title">Title : </label>
+        </div>
+      <div class="col-lg-9 col-md-9 col-sm-9">
         <textarea cols="40" name="title" [(ngModel)]="postItem.title" class="form-control" placeholder="Enter a suitable title for your blog : " required></textarea>
+      </div> 
+
+      </div>
         <br><br>
 
 

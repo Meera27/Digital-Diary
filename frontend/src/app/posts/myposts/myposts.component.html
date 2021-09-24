@@ -9,9 +9,9 @@
   <div class="row mb-3 bloglist" *ngFor="let post of posts.reverse()">
     <a routerLink="/blog" (click)=setPostId(post)>
       <div class="col-lg-4 col-md-4 col-sm-4">
-        <img src="{{imageurl}}{{post.image}}" class='iconDetails' alt="">
+        <img style="margin-top: 35px;" src="{{imageurl}}{{post.image}}" class='iconDetails' alt="">
       </div>
-      <div class="col-lg-8 col-md-8 col-sm-8" style="margin-left: 150px;">
+      <div class="col-lg-8 col-md-8 col-sm-8 col-8" style="margin-left: 150px;">
         <p class="btitle">{{post.title}}</p>
         <button style="align-self: center;" class="button-34" role="button">{{post.category}}</button>
         <br><br>

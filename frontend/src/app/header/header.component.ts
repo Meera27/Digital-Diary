@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
+import { PostService } from '../services/post.service';
+import { PostModel } from '../posts/post.model';
+
+
 
 @Component({
   selector: 'app-header',
@@ -8,8 +12,9 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  posts : PostModel[] = [];
 
-  constructor(public _auth : AuthService, private _router : Router) { }
+  constructor(private postService : PostService,public _auth : AuthService, private _router : Router) { }
 
   ngOnInit(): void {
   }
@@ -27,10 +32,20 @@ export class HeaderComponent implements OnInit {
     localStorage.removeItem('admintoken');
     this._router.navigate(['/'])
   }
-  blogcatclicked(){
-    localStorage.setItem("blogcatclicked","true");
-  }
+  // blogcatclicked(){
+  //   localStorage.setItem("blogcatclicked","true");
+  // }
   delblogcatclicked(){
     localStorage.removeItem("blogcatclicked")
+  }
+  categorySelect(catgselect : any){
+    localStorage.setItem("blogcatclicked","true");
+    console.log(catgselect);
+    this.postService.getBlogsByCatg(catgselect)
+    .subscribe((data)=>{
+      this.posts = JSON.parse(JSON.stringify(data));
+      console.log(data);
+    })
+    
   }
 }
