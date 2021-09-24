@@ -25,7 +25,7 @@
 <label style="font-size: 16px;"for="Category">Select Category</label>
           </div>
           <div class="col-lg-9 col-md-9 col-sm-9">
-            <select class="form-control" [(ngModel)]="postItem.category">
+            <select class="form-control" [(ngModel)]="postItem.category" name="category">
               <option disabled>Select Category</option>
               <option (change)="selectChangeHandler($event)" *ngFor="let cat of category">{{cat}}</option>
           </select>
@@ -33,16 +33,18 @@
         </div>
         <br><br>
         <!-- <input cols="40" name="image" [(ngModel)]="postItem.image" class="form-control"  placeholder="Link  "/> -->
-        <div class="input-group">
-            <div class="input-group-prepend">
+        
+            <!-- <div class="input-group-prepend">
               <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
-            </div>
+            </div> -->
             <div class="custom-file">
-              <input type="file" class="custom-file-input" id="inputGroupFile01"
-                aria-describedby="inputGroupFileAddon01" required>
-              <label class="custom-file-label" for="inputGroupFile01">Choose an image to be added to your blog</label>
-            </div>
-          </div>
+              <!-- <input type="file" class="custom-file-input" id="inputGroupFile01"
+                aria-describedby="inputGroupFileAddon01">
+              <label class="custom-file-label" for="inputGroupFile01">Choose file</label> -->
+
+              <input type="file" name="image" multiple (change)="selectImage($event)" accept="image/*"/>
+            </div><br>
+         
         <br><br>
         <label for="content">Enter your blog content below :</label>
         <textarea name="text" id="tarea" cols="30" rows="10" [(ngModel)]="postItem.content" class="form-control" required></textarea><br><br>

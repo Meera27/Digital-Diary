@@ -4,6 +4,7 @@ import { UserModel } from 'src/app/auth/signup/user.model';
 import { AuthService } from 'src/app/services/auth.service';
 import { PostService } from 'src/app/services/post.service';
 import { PostModel } from '../post.model'
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-myposts',
@@ -14,6 +15,7 @@ export class MypostsComponent implements OnInit {
 
   posts : PostModel[] = [];
   user = new UserModel("","","","","","");
+  imageurl : string | undefined;
 
   constructor(private postService: PostService ,public _auth:AuthService, private _router: Router) { }
 
@@ -22,12 +24,18 @@ export class MypostsComponent implements OnInit {
     this.postService.getmyPosts(userId)
     .subscribe((data)=>{
       this.posts = JSON.parse(JSON.stringify(data));
+      // console.log(this.posts[0].image);
+      
+      this.imageurl = "http://localhost:3000/uploads/";
+      
     })
     this.postService.getUsername(userId)
     .subscribe((data)=>{
       this.user = JSON.parse(JSON.stringify(data));
       
     })
+    
+   
   }
 
   UpdatePost(post:any){

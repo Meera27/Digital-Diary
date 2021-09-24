@@ -15,6 +15,7 @@ export class BlogComponent implements OnInit {
   post = new PostModel("","","","","","");
   isClicked = false; 
   buttonName:any = 'Show';
+  imageurl : string | undefined;
   // buttonNamer:any = 'Add'
   OnClick(){
     this.isClicked = !this.isClicked;
@@ -31,6 +32,7 @@ export class BlogComponent implements OnInit {
     this.postService.getSinglePost(postid)
     .subscribe((data)=>{
       this.post = JSON.parse(JSON.stringify(data));
+      this.imageurl = "http://localhost:3000/uploads/";
     })
   }
   Deletepost(id:any){

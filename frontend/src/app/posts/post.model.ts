@@ -11,9 +11,8 @@ export class PostModel{
         public UserID :String,
         public title : String,
         public category : String,
-        public image  :String,
         public content : String,
-        public review : String
-        
+        public review : String,
+        public image :string | Blob
     ){} 
 }
