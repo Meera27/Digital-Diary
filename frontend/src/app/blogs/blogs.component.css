@@ -8,3 +8,7 @@ a{
     /* padding: 2px;  */
     overflow: hidden 
 }
+nav{
+    text-align: center;
+}
+nav li {list-style: none; display: inline-block; }

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PostModel } from '../posts/post.model';
-// import { UserModel } from 'src/app/auth/signup/user.model';
 import { AuthService } from 'src/app/services/auth.service';
 import { PostService } from '../services/post.service';
 
