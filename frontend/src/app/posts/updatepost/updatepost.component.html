@@ -6,8 +6,15 @@
 <div class="mainc">
 <form #updatepost ="ngForm" (ngSubmit)="UpdatePost()" class="mx-5">
     <br><br>
-    <textarea cols="40" name="title" [(ngModel)]="postItem.title" class="form-control" placeholder="Enter a suitable title : "></textarea>
-    <br><br>
+    <div class="row">
+      <div class="col-lg-3 col-md-3 col-sm-3">
+<label for="Title">Title : </label>
+      </div>
+    <div class="col-lg-9 col-md-9 col-sm-9">
+      <textarea cols="40" name="title" [(ngModel)]="postItem.title" class="form-control" placeholder="Enter a suitable title for your blog : " required></textarea>
+    </div> 
+
+    </div>    <br><br>
     <div class="row">
       <div class="col-lg-3 col-md-3 col-sm-3">
 <label style="font-size: 20px;"for="Category"> Category</label>
@@ -26,7 +33,7 @@
         </div>
         <div class="custom-file">
           <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-          <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+          <label class="custom-file-label" for="inputGroupFile01">Choose an image to be added to your blog</label>
         </div>
       </div>
       <br><br>
