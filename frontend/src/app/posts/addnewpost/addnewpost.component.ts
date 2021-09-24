@@ -12,19 +12,21 @@ import { HttpClient } from '@angular/common/http';
 export class AddnewpostComponent implements OnInit {
 
   postItem = new PostModel("","","","","","");
-  category:any=['Category','Sports','Technology'];
+  category:any=['Sports','Technology'];
   selectedDay: any;
   images: any;
+  filenames:String = "No Image Chosen";
 
   constructor(private postService : PostService, private _router : Router, private http: HttpClient) { }
   
   ngOnInit(): void {
   }
-
+  
   selectImage(event:any){
     if(event.target.files.length>0){
       const file = event.target.files[0];
       this.images = file;
+      this.filenames = file.name;
     }
   }
   AddPost(){

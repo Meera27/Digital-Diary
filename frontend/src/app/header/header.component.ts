@@ -24,6 +24,7 @@ export class HeaderComponent implements OnInit {
     localStorage.removeItem('UserID');
     localStorage.removeItem('postId');
     localStorage.removeItem('updatePostId');
+    localStorage.removeItem('blogcatclicked');
     this._router.navigate(['/'])
   }
 

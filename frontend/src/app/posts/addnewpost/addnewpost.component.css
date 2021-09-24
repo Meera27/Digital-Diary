@@ -1,0 +1,9 @@
+.custom-file{
+    color: rgb(80, 35, 94);
+}
+.img{
+    border: 2px solid rgb(97, 71, 121);
+    padding: 10px;
+    background-color: rgb(243, 235, 247);
+    cursor: pointer;
+}

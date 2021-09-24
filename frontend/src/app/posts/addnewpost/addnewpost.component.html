@@ -42,7 +42,9 @@
                 aria-describedby="inputGroupFileAddon01">
               <label class="custom-file-label" for="inputGroupFile01">Choose file</label> -->
 
-              <input type="file" name="image" multiple (change)="selectImage($event)" accept="image/*"/>
+              <input type="file" name="image"  (change)="selectImage($event)" accept="image/*" style="display: none;" id= "img"/>
+              <label for="img" class="img">Choose Image</label>
+              <label style="margin-left: 10px;">{{filenames}}</label>
             </div><br>
          
         <br><br>
