@@ -49,7 +49,6 @@ function router(verifyToken){
     
         PostData.findOne({"_id":postId})
         .then(function(post){ 
-            console.log(post);
             res.send(post);
         });
     });
@@ -115,17 +114,15 @@ function router(verifyToken){
     
     //update a post
     postRoutes.put('/updatepost/:userid' ,verifyToken, function(req,res){
-        console.log("update" +req.body);
         const UserId = req.params.userid;
         id = req.body._id,
         UserID = UserId,
         title = req.body.title,
         category = req.body.category,
-        content =req.body.post.content,
-        image=req.body.post.image
+        content =req.body.content,
+        image=req.body.image,
         review =""
-        console.log("update");
-        console.log(req.body);
+        console.log("update" + image);
         PostData.findByIdAndUpdate({"_id" : id },
                                       {$set : {
                                           "UserID" : UserID,
@@ -138,7 +135,9 @@ function router(verifyToken){
     
         .then(function(){
             res.send();
-        })                                  
+        })
+        var imgid = id;
+       res.status(200).send({imgid}) ;                              
     })
     postRoutes.put('/blog/:postId', function(req,res){
         const postId = req.params.postId;
