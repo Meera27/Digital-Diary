@@ -1,16 +1,37 @@
-<h1 style="text-align: center;">Edit</h1>
 <div class="row top-spacer-form">
-    <div class="col-lg-12 col-md-12 col-sm-12"></div>
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <h1 style="text-align: center; margin-top: 25px;">EDIT BLOG</h1>
+    </div>
 </div>
 <div class="mainc">
-<form #updatepost ="ngForm" (ngSubmit)="UpdatePost()">
+<form #updatepost ="ngForm" (ngSubmit)="UpdatePost()" class="mx-5">
     <br><br>
-    <label>title</label>
-    <textarea cols="40" name="title" [(ngModel)]= "postItem.title"></textarea>
+    <textarea cols="40" name="title" [(ngModel)]="postItem.title" class="form-control" placeholder="Enter a suitable title : "></textarea>
     <br><br>
-    <label>category</label>
-    <input type="text" name="category" [(ngModel)]= "postItem.category">
+    <div class="row">
+      <div class="col-lg-3 col-md-3 col-sm-3">
+<label style="font-size: 20px;"for="Category"> Category</label>
+      </div>
+      <div class="col-lg-9 col-md-9 col-sm-9">
+        <select class="form-control" [(ngModel)]="postItem.category">
+          <option disabled>Select Category</option>
+          <option (change)="selectChangeHandler($event)" *ngFor="let cat of category">{{cat}}</option>
+      </select>
+      </div>
+    </div>
     <br><br>
-    <input type="submit" [disabled]="updatepost.invalid" style="margin-left: 80px;" class="btnnewbook" value="Save">
-</form> 
+    <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+        </div>
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+          <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+        </div>
+      </div>
+      <br><br>
+      <textarea name="text" id="tarea" cols="30" rows="10" [(ngModel)]="postItem.content" class="form-control"></textarea><br><br>
+      <div class="text-center">
+      <button type="submit" class="btn btn-dark text-center">SUBMIT</button>
+  </div></form> 
 </div>

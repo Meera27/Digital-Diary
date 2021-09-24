@@ -8,29 +8,9 @@ const Post = mongoose.model('Post', {
         required: true
     },
     category : String,
-    content : String,
     image :String,
-    review:String,
-    
-
-
-    // content: {
-    //     type: String,
-    //     required: true
-    // },
-    // imagePath: { 
-    //     type: String,
-    //      required: true 
-    //     },
-    
-    // postDate: {
-    //         type: String,
-    //         required: true
-    //     },
-
-    //     creator: { type: mongoose.Schema.Types.ObjectId,
-    //          ref: "User", 
-    //          required: true }
+    content : String,
+    review:String
 });
 
 

@@ -11,6 +11,8 @@ import { PostModel } from '../post.model';
 export class UpdatepostComponent implements OnInit {
 
   postItem = new PostModel("","","","","","");
+  category:any=['Sports','Technology'];
+  selectedDay: any;
 
   constructor(private postService: PostService, private _router: Router) { }
 
@@ -28,5 +30,12 @@ export class UpdatepostComponent implements OnInit {
     alert('Updated "' + this.postItem.title + '" successfully!');
     this._router.navigate(['/myposts']);
   }
+  selectChangeHandler (event: any) {
+    //update the ui
+    this.selectedDay = event.target.value;
+  }
+  changeWebsite(e:any) {
+    console.log(e.target.value);
 
+  }
 }

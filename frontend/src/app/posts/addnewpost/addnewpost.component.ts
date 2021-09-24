@@ -12,7 +12,7 @@ import { HttpClient } from '@angular/common/http';
 export class AddnewpostComponent implements OnInit {
 
   postItem = new PostModel("","","","","","");
-  category:any=['Sports','Technology'];
+  category:any=['Category','Sports','Technology'];
   selectedDay: any;
   images: any;
 
@@ -60,7 +60,6 @@ export class AddnewpostComponent implements OnInit {
   }
   changeWebsite(e:any) {
     console.log(e.target.value);
-
   }
 
 }
