@@ -24,7 +24,6 @@ export class PostService {
 
   newPost(item:any,userid:any){
     return this.http.post("http://localhost:3000/posts/insertpost/"+userid, {"post" : item})
-    .subscribe(data => {console.log(data)})
   }
   
   getPost(postid:any){ //to get details of the post for update page 

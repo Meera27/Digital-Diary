@@ -1,4 +1,5 @@
 const express = require('express');
+const multer = require('multer');
 const postRoutes = express.Router();
 const PostData = require ('../model/post');
 
@@ -53,23 +54,44 @@ function router(verifyToken){
         });
     });
     
+    //image upload using multer
+    const storage = multer.diskStorage({
+        destination: (req, file, callBack) => {
+            callBack(null, 'uploads');
+        },
+        filename: (req, file, callBack) => {
+            callBack(null, `DigitalDiary_${file.originalname}`)
+        }
+    })
     
-    // app.get('/post/:id' , (req,res)=>{
+    var upload = multer({storage: storage})
     
-    //     const id = req.params.id; 
-        
-    //     PostData.findOne({"_id":id})
-    //     .then((post)=>{
-    //         res.send(post);
-    //     })
-    // })
-    
-    
+    postRoutes.post('/file/:postid' , upload.single('image'),(req,res,next) => {
+        const file = req.file;
+        console.log(file.filename);
+        const postId = req.params.postid;
+
+        PostData.findByIdAndUpdate({"_id":postId},
+                                      {$set : {
+                                          "image" : req.file.filename                       
+                                      }})
+        .then(function(){
+            res.send();
+        })
+        // if(!file){
+        //     const error = new Error('Please upload a file')
+        //     error.httpStatusCode = 400;
+        //     return next(error);
+        // }
+        // res.send(file);
+
+    })
     //add new post
     postRoutes.post('/insertpost/:userid' ,verifyToken, function (req,res){
         res.header("Access-control-Allow-Origin" , "*");
         res.header("Access-control-Allow-Methods : GET,POST,PATCH,PUT,DELETE,OPTIONS");
         const UserId = req.params.userid;
+
         console.log("insert");
         console.log(req.body);
     
@@ -85,6 +107,9 @@ function router(verifyToken){
     
         var post = new PostData(post); 
         post.save();
+        console.log("id " + post._id);
+        res.send(post._id);
+        
     });
     
     

@@ -6,27 +6,32 @@
         <br><br>
         <input cols="40" name="title" [(ngModel)]="postItem.title" class="form-control" placeholder="Enter a suitable title : "/>
         <br><br>
-        <select class="form-control" [(ngModel)]="postItem.category">
+        <select class="form-control" [(ngModel)]="postItem.category" name="catg">
             <option disabled>Select Category</option>
             <option (change)="selectChangeHandler($event)" *ngFor="let cat of category">{{cat}}</option>
         </select>
         <br><br>
         <!-- <input cols="40" name="image" [(ngModel)]="postItem.image" class="form-control"  placeholder="Link  "/> -->
-        <div class="input-group">
-            <div class="input-group-prepend">
+        
+            <!-- <div class="input-group-prepend">
               <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
-            </div>
+            </div> -->
             <div class="custom-file">
-              <input type="file" class="custom-file-input" id="inputGroupFile01"
+              <!-- <input type="file" class="custom-file-input" id="inputGroupFile01"
                 aria-describedby="inputGroupFileAddon01">
-              <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+              <label class="custom-file-label" for="inputGroupFile01">Choose file</label> -->
+
+              <input type="file" name="image" multiple (change)="selectImage($event)" accept="image/*"/>
+            </div><br>
+            <div>
+              <!-- <p  (click)="imagesubmit()">Upload</p> -->
             </div>
-          </div>
+         
         <br><br>
 
-        <textarea name="text" id="tarea" cols="30" rows="10" [(ngModel)]="postItem.content" class="form-control"></textarea><br><br>
+        <textarea name="content" id="tarea" cols="30" rows="10" [(ngModel)]="postItem.content" class="form-control"></textarea><br><br>
         <div class="text-center">
-        <button type="button" class="btn btn-dark text-center">SUBMIT</button>
+        <button type="submit" class="btn btn-dark text-center">SUBMIT</button>
     </div>
 </form>
 </div>

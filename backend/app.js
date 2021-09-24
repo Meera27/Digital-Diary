@@ -1,16 +1,18 @@
+const path = require("path");  
 const express = require("express");
 const jwt = require ("jsonwebtoken");
 const bcrypt = require('bcrypt');
-const PostData = require ('./src/model/post');
+const bodyParser = require('body-parser');
 const UserData = require ('./src/model/user');
 
 var cors = require('cors');
 const app = express()
 app.use(cors());
 app.use(express.json());
+app.use(bodyParser.json());
 const port = process.env.PORT || 3000;
 
-
+app.use("/uploads" , express.static(path.join("uploads")));
 
 //signup
 app.post('/adduser' , function (req,res){
@@ -128,5 +130,7 @@ app.get('/getusername/:userid' , function (req,res){
         res.send(user);
     });
 });
+
+
 
 app.listen(port,()=>{console.log("Server Ready at "+port)});

@@ -1,9 +1,9 @@
 <nav class="navbar navbar-bright navbar-expand-lg navbar-light bg-light">
     <li class="nav-item" style="list-style-type: none;">
-        <a class="nav-link" (click)="categorySelect('technology')">Technology</a>
+        <a class="nav-link" (click)="categorySelect('Technology')">Technology</a>
     </li>
     <li class="nav-item" style="list-style-type: none;">
-        <a class="nav-link" (click)="categorySelect('sports')">Sports</a>
+        <a class="nav-link" (click)="categorySelect('Sports')">Sports</a>
     </li>
 </nav>
 <div class="container">
@@ -14,7 +14,7 @@
     <div class="row mb-3 bloglist" *ngFor="let post of posts.reverse()">
         <a routerLink="/blog" (click)="Addreview(post)">
             <div class="col-lg-4 col-md-4 col-sm-4">
-                <img src="../assets/blog.png" class='iconDetails' alt="">
+                <img src="{{imageurl}}{{post.image}}" class='iconDetails' alt="">
             </div>
             <div class="col-lg-8 col-md-8 col-sm-8" style="margin-left: 150px;">
                 <p class="btitle">{{post.title}}</p>

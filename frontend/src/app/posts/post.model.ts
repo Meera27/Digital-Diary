@@ -13,6 +13,6 @@ export class PostModel{
         public category : String,
         public content : String,
         public review : String,
-        public image :String
+        public image :string | Blob
     ){} 
 }

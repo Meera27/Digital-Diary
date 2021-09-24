@@ -13,19 +13,21 @@ import { PostService } from '../services/post.service';
 export class BlogsComponent implements OnInit {
 
   posts : PostModel[] = [];
+  imageurl : string | undefined;
 
   constructor(private postService : PostService,private _router: Router,public _auth:AuthService) { }
 
   ngOnInit(): void {
     
-    this.postService.getBlogs()
-    .subscribe((blogs)=>{
-      this.posts = JSON.parse(JSON.stringify(blogs));
-    })
+    // this.postService.getBlogs()
+    // .subscribe((blogs)=>{
+    //   this.posts = JSON.parse(JSON.stringify(blogs));
+    // })
     let postId = localStorage.getItem("updatePostId");
     this.postService.getPost(postId)
     .subscribe((data)=>{
       this.posts = JSON.parse(JSON.stringify(data)); //stringify = convert from object to JSON ; parse = convert from JSON to object
+       this.imageurl = "http://localhost:3000/uploads/";
     })
    
    
