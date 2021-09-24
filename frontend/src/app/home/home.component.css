@@ -1,0 +1,38 @@
+img{
+    float: right;
+    margin-top: -100px;
+    margin-right: 30px;
+    width: auto;
+    height: 600px;
+}
+@media screen and (max-width: 600px) {
+    img{
+        padding-left: 190px;
+        width: 600px;
+        height: auto;
+    }
+  }
+.head{
+    margin-top: 200px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 450%;
+    line-height: 1.1;
+}
+hr{
+    padding: 2px;
+    color: rgb(76, 40, 105);
+}
+
+.blogs{
+    border: 2px solid black;
+    padding: 10px;
+    padding-right: 30px;
+    padding-left: 30px;
+    background-color: rgba(218, 197, 218, 0.534);
+    letter-spacing: 1px;
+    font-size: large;
+}
+.cont{
+    font-family: 'Dosis', sans-serif;
+    letter-spacing: 1px;
+}

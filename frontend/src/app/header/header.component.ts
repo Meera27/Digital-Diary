@@ -25,6 +25,7 @@ export class HeaderComponent implements OnInit {
     localStorage.removeItem('postId');
     localStorage.removeItem('updatePostId');
     localStorage.removeItem('blogcatclicked');
+    localStorage.removeItem('forusername');
     this._router.navigate(['/'])
   }
 
@@ -44,7 +45,6 @@ export class HeaderComponent implements OnInit {
     this.postService.getBlogsByCatg(catgselect)
     .subscribe((data)=>{
       this.posts = JSON.parse(JSON.stringify(data));
-      console.log(data);
     })
     
   }
