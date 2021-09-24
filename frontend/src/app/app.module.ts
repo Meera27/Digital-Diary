@@ -20,6 +20,7 @@ import { UpdatepostComponent } from './posts/updatepost/updatepost.component';
 
 import { BlogComponent } from './blog/blog.component';
 import { BlogsComponent } from './blogs/blogs.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { BlogsComponent } from './blogs/blogs.component';
     HomeComponent,
     UpdatepostComponent,
     BlogComponent,
-    BlogsComponent
+    BlogsComponent,
+    FooterComponent
 
   ],
   imports: [
