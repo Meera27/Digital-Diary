@@ -16,6 +16,7 @@ export class MypostsComponent implements OnInit {
   posts : PostModel[] = [];
   user = new UserModel("","","","","","");
   imageurl : string | undefined;
+  value:any;
 
   constructor(private postService: PostService ,public _auth:AuthService, private _router: Router) { }
 
@@ -56,6 +57,25 @@ export class MypostsComponent implements OnInit {
 
   setPostId(post:any){
     localStorage.setItem("postId" , post._id.toString());
+  }
+  searchblog(event:any){
+    // console.log(event.target.value.length);
+    if(event.target.value.length >2){
+      this.value = event.target.value;
+      this.postService.getBlogsBySearch(this.value)
+      .subscribe((data)=>{
+        this.posts = JSON.parse(JSON.stringify(data));
+        this.imageurl = "http://localhost:3000/uploads/";
+    })
+    }
+    else{
+      let userId = localStorage.getItem("UserID");
+      this.postService.getmyPosts(userId)
+      .subscribe((data)=>{
+        this.posts = JSON.parse(JSON.stringify(data));
+        this.imageurl = "http://localhost:3000/uploads/";
+    })
+    }
   }
 
 }

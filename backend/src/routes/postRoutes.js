@@ -18,6 +18,17 @@ function router(verifyToken){
         });
     });
     
+    postRoutes.get('/blogsbysearch/:searchvalue' , function (req,res){
+        res.header("Access-control-Allow-Origin" , "*");
+        res.header("Access-control-Allow-Methods : GET,POST,PATCH,PUT,DELETE,OPTIONS"); 
+        let searchval = req.params.searchvalue;
+        PostData.find({"title": {$regex: searchval, $options:"i"}})
+        .then(function(blogs){
+            console.log(blogs) ;
+            res.send(blogs);
+        });
+    });
+    
     //show all users posts
     postRoutes.get('/myposts/:userid' ,verifyToken, function (req,res){
         res.header("Access-control-Allow-Origin" , "*");

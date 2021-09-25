@@ -15,6 +15,7 @@ export class BlogsComponent implements OnInit {
 
   posts : PostModel[] = [];
   imageurl : string | undefined;
+  value:any;
 
   constructor(private postService : PostService,private _router: Router,public _auth:AuthService) { }
 
@@ -29,7 +30,7 @@ export class BlogsComponent implements OnInit {
     this.postService.getBlogsByCatg('Technology')
     .subscribe((data)=>{
       this.posts = JSON.parse(JSON.stringify(data));
-      console.log(this.posts[0].UserID);
+      // console.log(this.posts[0].UserID);
       this.imageurl = "http://localhost:3000/uploads/";
     })
   
@@ -43,7 +44,6 @@ export class BlogsComponent implements OnInit {
     this.postService.getBlogsByCatg(catgselect)
     .subscribe((data)=>{
       this.posts = JSON.parse(JSON.stringify(data));
-      console.log(this.posts);
       this.imageurl = "http://localhost:3000/uploads/";
     })
   }
@@ -56,4 +56,22 @@ export class BlogsComponent implements OnInit {
   // setPostId(post:any){
   //   localStorage.setItem("postId",post._id.toString());
   // }
+  searchblog(event:any){
+    // console.log(event.target.value.length);
+    if(event.target.value.length >2){
+      this.value = event.target.value;
+      this.postService.getBlogsBySearch(this.value)
+      .subscribe((data)=>{
+        this.posts = JSON.parse(JSON.stringify(data));
+        this.imageurl = "http://localhost:3000/uploads/";
+    })
+    }
+    else{
+      this.postService.getBlogsByCatg('Technology')
+    .subscribe((data)=>{
+      this.posts = JSON.parse(JSON.stringify(data));
+      this.imageurl = "http://localhost:3000/uploads/";
+    })
+    }
+  }
 }

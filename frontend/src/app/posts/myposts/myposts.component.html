@@ -1,6 +1,9 @@
 <!-- <button><a routerLink="/addnewpost">ADD NEW POST</a></button> -->
 <!-- <a routerLink="/addnewpost" style="color: white;"><button class="button button5 tooltiptext" style="margin:100px 0px 0px 25px; font-size: 25px"><b>+</b></button></a> -->
-
+<div class="form-group has-search" >
+  <span class="fa fa-search form-control-feedback"></span>
+  <input type="text" class="form-control" (keyup)="searchblog($event)" placeholder="Search">
+</div>
 <h1 style="text-align: center;margin-top: 120px;">{{user.username}}'s DigitalDiary</h1>
 <div class="container">
   <div class="row top-spacer-form">
