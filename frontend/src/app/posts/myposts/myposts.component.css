@@ -6,6 +6,9 @@ a{
 }
 .has-search .form-control {
   padding-left: 2.375rem;
+  width:300px;
+  border:1px solid rgb(219, 156, 219);
+  
 }
 .top-spacer-form{
   height: 60px;
@@ -20,7 +23,8 @@ a{
   line-height: 2.375rem;
   text-align: center;
   pointer-events: none;
-  color: #aaa;
+  /* color: #aaa; */
+  color: rgb(219, 156, 219);
 }
 
 .content{
@@ -29,5 +33,6 @@ a{
   overflow: hidden ;
   font-family: 'Koh Santepheap', cursive;
 }
+
 
 

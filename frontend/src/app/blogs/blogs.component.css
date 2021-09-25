@@ -50,5 +50,10 @@ nav li {list-style: none;
     line-height: 2.375rem;
     text-align: center;
     pointer-events: none;
-    color: #aaa;
+    /* color: #aaa; */
+    color: rgb(219, 156, 219);
 }
+.nav-item:hover{
+    background-color: rgb(216, 170, 235);
+}
+
