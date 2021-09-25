@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { AddnewpostComponent } from './posts/addnewpost/addnewpost.component';
 import { MypostsComponent } from './posts/myposts/myposts.component';
 import { UpdatepostComponent } from './posts/updatepost/updatepost.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 const routes: Routes = [
   {path: '',
@@ -21,6 +22,9 @@ const routes: Routes = [
 
   {path: 'blogs',
    component: BlogsComponent},
+
+   {path: 'user-profile',
+  component: UserProfileComponent},
 
   {path: 'login',
    component:LoginComponent},

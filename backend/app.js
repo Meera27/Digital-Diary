@@ -129,17 +129,61 @@ app.get('/getusername/:userid' , function (req,res){
     .then(function(user){ 
         res.send(user);
     });
-});
+}); 
 
 app.get('/user/:userid',function(req,res){
     res.header("Access-control-Allow-Origin" , "*");
     res.header("Access-control-Allow-Methods : GET,POST,PATCH,PUT,DELETE,OPTIONS");
     const userid = req.params.userid;
 
-    Userdata.findOne({"_id":userid})
+    UserData.findOne({"_id":userid})
     .then(function(user){ 
         res.send(user);
     });
 });
+//update a user
+app.put('/updateuser/:userid' , function(req,res){
+    res.header("Access-control-Allow-Origin" , "*");
+    res.header("Access-control-Allow-Methods : GET,POST,PATCH,PUT,DELETE,OPTIONS");
+    console.log("hai");
+    var userid = req.params.userid;
+    var password = req.body.paswd.trim();
+    
+
+    if(password!= ""){
+        bcrypt.hash(password,12, function(err,hash){
+            UserData.findByIdAndUpdate({"_id" : userid },
+                                      {$set : {
+                                          "fname" : req.body.fname.trim(),
+                                          "lname" : req.body.lname.trim(),
+                                          "email" : req.body.email.trim(), 
+                                          "phno" :req.body.phno.trim(),
+                                          "username":req.body.username.trim(),
+                                          "paswd" :hash                         
+                                      }})
+    
+            .then(function(){
+            res.send();
+            })
+        })
+    }
+    else{
+        UserData.findByIdAndUpdate({"_id" : userid },
+        {$set : {
+            "fname" : req.body.fname.trim(),
+            "lname" : req.body.lname.trim(),
+            "email" : req.body.email.trim(), 
+            "phno" :req.body.phno.trim(),
+            "username":req.body.username.trim(),                     
+        }})
+
+       .then(function(){
+            res.send();
+       })
+    }
+    
+
+                                
+})
 
 app.listen(port,()=>{console.log("Server Ready at "+port)});
