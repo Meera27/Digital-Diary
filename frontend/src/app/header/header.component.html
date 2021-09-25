@@ -50,9 +50,6 @@
       <a class="nav-link" routerLink="/addnewpost" *ngIf = _auth.loggedIn()>ADD BLOG</a>
     </li>
     <li class="nav-item mt-4">
-      <a class="nav-link" routerLink="/addnewpost" *ngIf = _auth.loggedIn() >ADD BLOG</a>
-    </li>
-    <li class="nav-item mt-4">
       <a class="nav-link" (click)="logoutUser()" *ngIf = _auth.loggedIn() style="cursor: pointer;">LOGOUT</a>
     </li>
     <li class="nav-item mt-4">

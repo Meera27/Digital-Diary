@@ -57,6 +57,7 @@ export class MypostsComponent implements OnInit {
 
   setPostId(post:any){
     localStorage.setItem("postId" , post._id.toString());
+    this._router.navigate(['/blog']);
   }
   searchblog(event:any){
     // console.log(event.target.value.length);
