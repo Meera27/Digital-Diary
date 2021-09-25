@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/DigitalDiary');
+mongoose.connect('mongodb+srv://userone:userone@ictakfiles.zmywv.mongodb.net/DigitalDiary?retryWrites=true&w=majority');
 
 const Post = mongoose.model('Post', {
     UserID : String,

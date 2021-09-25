@@ -1,40 +1,9 @@
-<!-- <nav class="navbar navbar-bright navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" routerLink="/">HOME</a>
-        <li class="nav-item" style="list-style-type: none;">
-          <a class="nav-link" routerLink="/blogs" (click)="categorySelect('Sports')">BLOGS CATEGORIES</a>
-      </li>
-      <li class="nav-item" style="list-style-type: none;">
-        <a class="nav-link" routerLink="/" >ABOUT</a>
-       </li>
-        <li class="nav-item" style="list-style-type: none;">
-            <a class="nav-link" routerLink="/login" *ngIf = "!_auth.loggedIn() && !_auth.adminloggedIn()">LOGIN</a>
-          </li>
-        <li class="nav-item" style="list-style-type: none;">
-            <a class="nav-link" routerLink="/signup" *ngIf = "!_auth.loggedIn() && !_auth.adminloggedIn()">SIGN UP</a>
-        </li>
-        <li class="nav-item" style="list-style-type: none;">
-          <a class="nav-link" routerLink="/myposts" *ngIf = _auth.loggedIn() (click)="delblogcatclicked()">MY POSTS</a>
-        </li>
-        <li class="nav-item" style="list-style-type: none;">
-          <a class="nav-link" routerLink="/addnewpost" *ngIf = _auth.loggedIn()>ADD BLOG</a>
-        </li>
-        <li class="nav-item" style="list-style-type: none;">
-          <a class="nav-link" (click)="logoutUser()" *ngIf = _auth.loggedIn() style="cursor: pointer;">LOGOUT</a>
-        </li>
-        <li class="nav-item" style="list-style-type: none;">
-          <a class="nav-link" (click)="adminlogout()" *ngIf = _auth.adminloggedIn() style="cursor: pointer;">ADMIN LOGOUT</a>
-        </li>
-  </nav> -->
-
-
-  <!-- (click)="blogcatclicked()" -->
-<!-- <nav class="navbar"> -->
-  <ul class="nav justify-content-center" style="height: 67px;">
+<ul class="nav justify-content-center" style="height: 67px;">
     <li class="nav-item mt-4">
       <a class="nav-link" aria-current="page" routerLink="/">HOME</a>
     </li>
     <li class="nav-item mt-4">
-      <a class="nav-link" routerLink="/blogs" (click)="categorySelect('Sports')" style="color: black;">BLOGS</a>
+      <a class="nav-link" routerLink="/blogs" (click)="categorySelect('Sports')" >BLOGS</a>
     </li>
     
     <li class="nav-item mt-4">
@@ -60,8 +29,8 @@
     </li>
     <li class="nav-item mt-4">
       <a class="nav-link" aria-current="page" routerLink="/user-profile" *ngIf = _auth.loggedIn()>
-        <span class="postedname">{{user.username}}</span>&nbsp;
         <i class="fa fa-user-circle-o" ></i>
+        <span class="postedname">{{user.username}}</span>
       </a>
     </li>
   </ul>
