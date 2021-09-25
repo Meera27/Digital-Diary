@@ -2,16 +2,16 @@
     <div id="carouselExampleControls" class="carousel slide"  data-ride="carousel">
         <div class="carousel-inner" >
           <div class="carousel-item active">
-            <img class="d-block w-100" src="../assets/tech.png" alt="First slide">
+            <img class="d-block w-100 mx-auto" src="../assets/tech.png" alt="First slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100" src="../assets/sports.png" alt="Second slide">
+            <img class="d-block w-100 mx-auto" src="../assets/sports.png" alt="Second slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100" src="../assets/shut.png" alt="Third slide">
+            <img class="d-block w-100 mx-auto" src="../assets/shut.png" alt="Third slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100" src="../assets/tech1.png" alt="Third slide">
+            <img class="d-block w-100 mx-auto" src="../assets/tech1.png" alt="Third slide">
           </div>
         
         </div>
@@ -39,7 +39,6 @@
     </nav>
 
 <div class="row bloglist" style="width: auto; margin-top: 20px;" *ngFor="let post of posts.reverse()">
-
     <a routerLink="/blog" (click)="Addreview(post);useridpass(post.UserID)" >
         <div class="col-lg-12 col-md-12 col-sm-12 col-12" >
             <img style="margin-top: 20px;" src="{{imageurl}}{{post.image}}" class='iconDetails' alt="">
@@ -58,6 +57,4 @@
         </div>
     </a>
 </div>
-
 </div>
-<app-footer></app-footer>

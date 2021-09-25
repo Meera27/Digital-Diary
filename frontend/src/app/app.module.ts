@@ -15,13 +15,14 @@ import { AddnewpostComponent } from './posts/addnewpost/addnewpost.component';
 import { HomeComponent } from './home/home.component';
 import { AuthService } from './services/auth.service';
 import { TokenInterceptorService } from './auth/token-interceptor.service';
-
+import { Router, RouterModule } from '@angular/router';
 import { UpdatepostComponent } from './posts/updatepost/updatepost.component';
 
 import { BlogComponent } from './blog/blog.component';
 import { BlogsComponent } from './blogs/blogs.component';
 import { FooterComponent } from './footer/footer.component';
 import { AboutComponent } from './about/about.component';
+// import { UserProfileComponent } from './user-profile/user-profile.component';
 
 
 @NgModule({
@@ -37,14 +38,16 @@ import { AboutComponent } from './about/about.component';
     BlogComponent,
     BlogsComponent,
     FooterComponent,
-    AboutComponent
+    AboutComponent,
+    // UserProfileComponent
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    Router
   ],
   providers: [PostService , AuthService,
     {

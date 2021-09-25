@@ -131,6 +131,15 @@ app.get('/getusername/:userid' , function (req,res){
     });
 });
 
+app.get('/user/:userid',function(req,res){
+    res.header("Access-control-Allow-Origin" , "*");
+    res.header("Access-control-Allow-Methods : GET,POST,PATCH,PUT,DELETE,OPTIONS");
+    const userid = req.params.userid;
 
+    Userdata.findOne({"_id":userid})
+    .then(function(user){ 
+        res.send(user);
+    });
+});
 
 app.listen(port,()=>{console.log("Server Ready at "+port)});
