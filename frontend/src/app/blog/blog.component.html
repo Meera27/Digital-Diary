@@ -1,16 +1,19 @@
 <div class="mainbody">
   <div class="container-fullwidth">
-    <div class="userim">
+    <!-- <div class="userim">
       <i class="fa fa-user-circle-o" ></i>
       <p class="postedname">
         Posted By<br>
         <b>{{username}}</b>
       </p>
-    </div>
+    </div> -->
      
        <div class="row" style="margin-top: 50px">
        <div  class="col-lg-6 col-md-3 col-sm-3" style="margin-top:50px;">
         <h3 class="title">{{post.title}}</h3>
+        <p class="postedname">
+         <i>- Posted By&nbsp;<b>{{username}}</b></i>
+        </p>
        </div>
        <div class="col-lg-6 col-md-9 col-sm-9">
         <img src="{{imageurl}}{{post.image}}" alt="" >

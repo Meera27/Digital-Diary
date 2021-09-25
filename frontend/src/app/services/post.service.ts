@@ -15,6 +15,10 @@ export class PostService {
     return this.http.get("http://localhost:3000/posts/blogsbyCatg/"+category);
   }
 
+  getBlogsBySearch(searchvalue:any){
+    return this.http.get("http://localhost:3000/posts/blogsbysearch/"+searchvalue);
+  }
+
   getUsername(userid : any){
     return this.http.get("http://localhost:3000/getusername/"+userid);
   }
