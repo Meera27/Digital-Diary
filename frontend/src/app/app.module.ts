@@ -21,6 +21,7 @@ import { UpdatepostComponent } from './posts/updatepost/updatepost.component';
 import { BlogComponent } from './blog/blog.component';
 import { BlogsComponent } from './blogs/blogs.component';
 import { FooterComponent } from './footer/footer.component';
+import { AboutComponent } from './about/about.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { FooterComponent } from './footer/footer.component';
     UpdatepostComponent,
     BlogComponent,
     BlogsComponent,
-    FooterComponent
+    FooterComponent,
+    AboutComponent
 
   ],
   imports: [

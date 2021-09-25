@@ -5,7 +5,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { BlogComponent } from './blog/blog.component';
 import { BlogsComponent } from './blogs/blogs.component';
-
+import { AboutComponent } from './about/about.component';
 
 import { HomeComponent } from './home/home.component';
 import { AddnewpostComponent } from './posts/addnewpost/addnewpost.component';
@@ -15,6 +15,9 @@ import { UpdatepostComponent } from './posts/updatepost/updatepost.component';
 const routes: Routes = [
   {path: '',
    component: HomeComponent},
+
+   {path: 'about',
+   component: AboutComponent},
 
   {path: 'blogs',
    component: BlogsComponent},
