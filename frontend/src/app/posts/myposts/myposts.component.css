@@ -7,6 +7,9 @@ a{
 .has-search .form-control {
   padding-left: 2.375rem;
 }
+.top-spacer-form{
+  height: 60px;
+    }
 
 .has-search .form-control-feedback {
   position: absolute;
@@ -23,8 +26,8 @@ a{
 .content{
   margin-top: 20px;
   height: 2.7em;
-  /* padding: 2px;  */
-  overflow: hidden 
+  overflow: hidden ;
+  font-family: 'Koh Santepheap', cursive;
 }
 
 

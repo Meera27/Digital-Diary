@@ -2,7 +2,9 @@
   @import "~bootstrap/dist/css/bootstrap.min.css";
   @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Playfair+Display&family=Exo+2:wght@300&family=Roboto:wght@700&display=swap');  
 @import url('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css');
-  *{
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Koh+Santepheap&display=swap');
+
+*{
     margin: 0px;
     padding: 0px;
     /* font-family: 'Poiret One', cursive; */
@@ -78,7 +80,9 @@ height: 100px;
     margin: 2%;
   }
   .content{
-    font-family: 'Merriweather', serif;
+    font-family: 'Koh Santepheap', cursive;
+    font-size: 18px;
+
   }
   .title{
     text-align: center;
@@ -140,8 +144,8 @@ height: 100px;
   }
 } */
 .btitle{
-font-family: 'Roboto', sans-serif;
-height: 1.2em;
+  font-family: 'Koh Santepheap', cursive;
+height: 1.37em;
 overflow: hidden;
 }
 
