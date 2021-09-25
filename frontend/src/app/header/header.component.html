@@ -36,6 +36,7 @@
     <li class="nav-item mt-4">
       <a class="nav-link" routerLink="/blogs" (click)="categorySelect('Sports')">BLOGS</a>
     </li>
+    
     <li class="nav-item mt-4">
       <a class="nav-link"routerLink="/login" *ngIf = "!_auth.loggedIn() && !_auth.adminloggedIn()">LOGIN</a>
     </li>
@@ -43,7 +44,10 @@
       <a class="nav-link" routerLink="/signup" *ngIf = "!_auth.loggedIn() && !_auth.adminloggedIn()">SIGNUP</a>
     </li>
     <li class="nav-item mt-4">
-      <a class="nav-link" routerLink="/myposts" *ngIf = _auth.loggedIn() (click)="delblogcatclicked()">MY POSTS</a>
+      <a class="nav-link" routerLink="/myposts" *ngIf = _auth.loggedIn() (click)="delblogcatclicked()">MY BLOGS</a>
+    </li>
+    <li class="nav-item mt-4">
+      <a class="nav-link" routerLink="/addnewpost" *ngIf = _auth.loggedIn()>ADD BLOG</a>
     </li>
     <li class="nav-item mt-4">
       <a class="nav-link" routerLink="/addnewpost" *ngIf = _auth.loggedIn() >ADD BLOG</a>
