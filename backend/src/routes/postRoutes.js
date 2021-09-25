@@ -112,7 +112,7 @@ function router(verifyToken){
             category : req.body.post.category,
             content :req.body.post.content,
             image:req.body.post.image,
-            review :req.body.post.review
+            review :""
             
         }
     
