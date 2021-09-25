@@ -4,6 +4,7 @@ import { PostModel } from '../posts/post.model';
 import { AuthService } from 'src/app/services/auth.service';
 import { PostService } from '../services/post.service';
 import { analyzeAndValidateNgModules } from '@angular/compiler';
+import { UserModel } from '../auth/signup/user.model';
 
 @Component({
   selector: 'app-blogs',
@@ -14,7 +15,6 @@ export class BlogsComponent implements OnInit {
 
   posts : PostModel[] = [];
   imageurl : string | undefined;
-
 
   constructor(private postService : PostService,private _router: Router,public _auth:AuthService) { }
 
@@ -29,15 +29,21 @@ export class BlogsComponent implements OnInit {
     this.postService.getBlogsByCatg('Technology')
     .subscribe((data)=>{
       this.posts = JSON.parse(JSON.stringify(data));
+      console.log(this.posts[0].UserID);
       this.imageurl = "http://localhost:3000/uploads/";
     })
-
+  
   } 
+  useridpass(userid:any){
+    console.log("userid " +userid);
+    localStorage.setItem("forusername",userid);    
+  }
   categorySelect(catgselect : any){
     console.log(catgselect);
     this.postService.getBlogsByCatg(catgselect)
     .subscribe((data)=>{
       this.posts = JSON.parse(JSON.stringify(data));
+      console.log(this.posts);
       this.imageurl = "http://localhost:3000/uploads/";
     })
   }
@@ -47,7 +53,7 @@ export class BlogsComponent implements OnInit {
     console.log(post._id.toString());
     this._router.navigate(['/blog']);
   }
-  setPostId(post:any){
-    localStorage.setItem("postId",post._id.toString());
-  }
+  // setPostId(post:any){
+  //   localStorage.setItem("postId",post._id.toString());
+  // }
 }

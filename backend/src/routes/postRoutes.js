@@ -12,7 +12,8 @@ function router(verifyToken){
         res.header("Access-control-Allow-Methods : GET,POST,PATCH,PUT,DELETE,OPTIONS"); 
         let category = req.params.category;
         PostData.find({"category":category})
-        .then(function(blogs){ 
+        .then(function(blogs){
+            console.log(blogs) ;
             res.send(blogs);
         });
     });

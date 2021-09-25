@@ -7,3 +7,11 @@
     background-color: rgb(243, 235, 247);
     cursor: pointer;
 }
+
+.form-control{
+    border: 1px solid rgb(186, 165, 209);
+}
+.form-control:hover{
+    border: 1px solid rgb(115, 80, 156);
+    background-color: rgba(218, 201, 238, 0.479);
+ }

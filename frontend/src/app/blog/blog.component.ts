@@ -4,6 +4,7 @@ import { PostService } from 'src/app/services/post.service';
 import { PostModel } from 'src/app/posts/post.model';
 // import { UserModel } from 'src/app/auth/signup/user.model';
 import { AuthService } from '../services/auth.service';
+import { UserModel } from '../auth/signup/user.model';
 
 @Component({
   selector: 'app-blog',
@@ -13,9 +14,11 @@ import { AuthService } from '../services/auth.service';
 export class BlogComponent implements OnInit {
 
   post = new PostModel("","","","","","");
+  user = new UserModel("","","","","","");
   isClicked = false; 
   buttonName:any = 'Show';
   imageurl : string | undefined;
+  username:any;
   // buttonNamer:any = 'Add'
   OnClick(){
     this.isClicked = !this.isClicked;
@@ -33,6 +36,12 @@ export class BlogComponent implements OnInit {
     .subscribe((data)=>{
       this.post = JSON.parse(JSON.stringify(data));
       this.imageurl = "http://localhost:3000/uploads/";
+    })
+    let userId = localStorage.getItem("forusername");
+    this.postService.getUsername(userId)
+    .subscribe((data)=>{
+      this.user = JSON.parse(JSON.stringify(data));
+      this.username = this.user.username;
     })
   }
   Deletepost(id:any){
