@@ -11,13 +11,20 @@ a{
 nav{
     text-align: center;
 }
-nav li {list-style: none; display: inline-block; }
+nav li {list-style: none; 
+    display: inline-block; }
 
 .carousel-inner img {
     margin: auto;
     height: 500px;
-   
+    /* max-width: 100%; */
+    margin-top: 90px;
+    max-height: 90% !important;
+    overflow: hidden
   }
+  .pull-right {
+    float: right;
+}
 .form-group{
     float: right;
 }

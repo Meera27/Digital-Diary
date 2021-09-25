@@ -31,5 +31,7 @@ img{
 .title{
     word-break: break-all;
     line-height:50px;
-    
+}
+.mainbody{
+    margin: 50px;
 }
